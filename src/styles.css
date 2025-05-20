@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+button{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+input {
+  margin-top: 10px;
+}
+label{
+  margin-right: 10px;
+}

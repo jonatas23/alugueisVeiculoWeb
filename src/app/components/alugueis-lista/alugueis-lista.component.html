@@ -1,0 +1,39 @@
+<p-toast></p-toast>
+
+<div class="p-field p-mb-3">
+  <label for="filtroStatus">Filtrar por status:</label>
+  <p-dropdown
+    inputId="filtroStatus"
+    [options]="statusOpcoes"
+    [(ngModel)]="statusFiltro"
+    (onChange)="carregar()"
+    placeholder="Selecione um status">
+  </p-dropdown>
+</div>
+
+
+<p-table [value]="alugueis" [loading]="carregando" [paginator]="true" [rows]="5">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Cliente</th>
+      <th>Veículo</th>
+      <th>Tipo</th>
+      <th>Início</th>
+      <th>Fim</th>
+      <th>Ações</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-aluguel>
+    <tr>
+      <td>{{ aluguel.clienteNome }}</td>
+      <td>{{ aluguel.veiculoModelo }}</td>
+      <td>{{ aluguel.tipo }}</td>
+      <td>{{ aluguel.dataInicio | date: 'shortDate' }}</td>
+      <td>{{ aluguel.dataFim | date: 'shortDate' }}</td>
+      <td>
+        <button *ngIf="aluguel.ativo" pButton type="button" icon="pi pi-undo" label="Devolver"
+                (click)="devolver(aluguel)" class="p-button-sm p-button-warning"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

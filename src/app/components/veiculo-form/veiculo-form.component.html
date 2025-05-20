@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="modelo">Modelo</label>
+      <input id="modelo" type="text" pInputText formControlName="modelo" />
+    </div>
+    <div class="p-field">
+      <label for="tipo">Tipo</label>
+      <p-dropdown [options]="tipos" formControlName="tipo" placeholder="Selecione"></p-dropdown>
+    </div>
+    <button type="submit" pButton label="Salvar" [disabled]="form.invalid"></button>
+  </div>
+</form>

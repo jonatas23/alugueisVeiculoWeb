@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label>Cliente</label>
+      <p-dropdown [options]="clientes" optionLabel="nome" optionValue="id" formControlName="clienteId"></p-dropdown>
+    </div>
+
+    <div class="p-field">
+      <label>Veículo</label>
+      <p-dropdown [options]="veiculos" optionLabel="modelo" optionValue="id" formControlName="veiculoId"></p-dropdown>
+    </div>
+
+    <div class="p-field">
+      <label>Data Início</label>
+      <p-calendar formControlName="dataInicio" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+
+    <div class="p-field">
+      <label>Data Fim</label>
+      <p-calendar formControlName="dataFim" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+
+    <button type="submit" pButton label="Alugar" [disabled]="form.invalid"></button>
+  </div>
+</form>

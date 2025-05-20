@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" pInputText formControlName="nome" />
+    </div>
+    <div class="p-field">
+      <label for="cpf">CPF</label>
+      <input id="cpf" type="text" pInputText formControlName="cpf" />
+    </div>
+    <button type="submit" pButton label="Salvar" [disabled]="form.invalid"></button>
+  </div>
+</form>
