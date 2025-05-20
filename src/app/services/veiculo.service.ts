@@ -21,4 +21,9 @@ export class VeiculoService {
     return this.http.post<Veiculo>(this.apiUrl, veiculo);
   }
 
+
+  salvarBackp(veiculo: Veiculo): Observable<Veiculo> {
+    return this.http.post<Veiculo>(this.apiUrl, veiculo);
+  }
+
 }
